@@ -18,13 +18,13 @@
 		<!-- Header -->
 			<section id="header">
 				<header>
-					<h1>
-						A Assistec
-					</h1>
+					<!--<div style="with:100%; background:'white'; opacity: 0.2;">-->
+					<img src="images/logo.png" style="max-width:800px;" />
 					<p>Referência em Refrigeração e venda de peças.</p>
+					<!--</div>-->
 				</header>
 				<footer>
-					<a href="#banner" class="button style2 scrolly-middle">Conheça Nossos Serviços</a>
+					<a href="#banner" class="button style2 scrolly-middle">Conheça A Empresa</a>
 				</footer>
 			</section>
 
@@ -42,7 +42,7 @@
 				Atualmente estamos implantando um E-Commerce para facilitar nossa comunicação com nossos clientes de outras regiões. <br />
 				</p>
 				<footer>
-					<a href="#first" class="button style2 scrolly">Conheça nossos serviços</a>
+					<a href="#first" class="button style2 scrolly">Conheça Nossos Serviços</a>
 				</footer>
 			</section>
 
@@ -51,7 +51,7 @@
 				<a href="#" class="image fit"><img src="images/vendapecas.jpg" alt="" /></a>
 				<div class="inner">
 					<header>
-						<h2>Comércio de Peças</h2>
+						<h2 style="color:#004698">Comércio de Peças</h2>
 					</header>
 					<p>Trabalhamos com peças de toda a linha Branca das mais variadas marcas. Possuindo em estoque uma variedade com mais de <b style="color:#004698"> 10.000 itens </b>.</p>
 					<!--TODO: add o logo das marcas que trabalha-->
@@ -63,7 +63,7 @@
 				<a href="#" class="image fit"><img src="images/manutencao.jpg" alt="" /></a>
 				<div class="inner">
 					<header>
-						<h2>Serviços Autorizados</h2>
+						<h2 style="color:#004698">Serviços Autorizados</h2>
 					</header>
 					<p>Somos um representante da <b style="color:#004698">Electrolux</b> , com serviços autorizados de ar-condicionado. Possuindo uma equipe qualificada e atualizada sobre as novas tecnologias do ramo.</p>
 				</div>
@@ -74,7 +74,7 @@
 				<a href="#" class="image fit"><img src="images/manutencaoTudo.jpg" alt="" /></a>
 				<div class="inner">
 					<header>
-						<h2>Regrigeração</h2>
+						<h2 style="color:#004698">Regrigeração</h2>
 					</header>
 					<p>Possuímos uma equipe qualificada no ramo de refrigeração, atuando especificamente nesse ramo, para facilitar seus conhecimentos sobre a área. 
 					Ramo que deu ínicio ao crescimento da empresa.
@@ -87,7 +87,7 @@
 				<a href="#" class="image fit"><img src="images/aparelhos.gif" alt="" /></a>
 				<div class="inner">
 					<header>
-						<h2>Máquinas de Lavar 
+						<h2 style="color:#004698">Máquinas de Lavar 
 						</h2>
 					</header>
 					<p>Com técnicos específicos do ramo, que trabalham com toda a linha de máquinas de lavar, secadoras, portáteis, microondas e etc. Possuímos uma equipe para atendê-lo em sua residência no melhor horário pra você.
@@ -98,7 +98,7 @@
 		<!-- Portfolio -->
 			<article class="container box style2">
 				<header>
-					<h2>Nossa Sede</h2>
+					<h2 style="color:#004698">Nossa Sede</h2>
 					<p>Inaguramos nossa nova sede, com um espaço amplo
 						para melhor atendê-lo e garantir a maior variedade de peças.
 						Nossa sede se encontra na<br />
@@ -123,14 +123,20 @@
 			<!--TODO: inserir endereço-->
 		<!-- Feature 5 -->
 			<article class="container box style1 right">
-				<a href="#" class="image fit"><img src="images/aparelhos.gif" alt="" /></a>
+				<a href="#" class="image fit"><div id="map"></div></a>
 				<div class="inner">
 					<header>
-						<h2>Máquinas de Lavar 
+						<h2 style="color:#004698">Localização
 						</h2>
 					</header>
-					<p>Com técnicos específicos do ramo, que trabalham com toda a linha de máquinas de lavar, secadoras, portáteis, microondas e etc. Possuímos uma equipe para atendê-lo em sua residência no melhor horário pra você.
-					</p>
+					<b style="color:#004698">Endereço</b> <br /> Avenida Bento Gonçalves, Nº3155<br />
+					<b style="color:#004698">Bairro</b> <br /> Partenon <br />
+					<b style="color:#004698">CEP</b> <br /> 90.650-003<br />
+					<b style="color:#004698">Contato</b> <br />
+					<b>&nbsp; Assistência Técnica</b> <br />
+					&nbsp; 33365379 - 33843712<br / >
+					 <b>&nbsp; Venda De Peças</b> <br />
+					&nbsp; 30263512 - 30266840 - 999354200
 				</div>
 			</article>
 
@@ -186,3 +192,20 @@
 
 	</body>
 </html>
+
+<script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+	 <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
