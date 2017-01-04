@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Overflow by HTML5 UP</title>
+		<title>Assistec</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -17,10 +17,10 @@
 
 		<!-- Header -->
 			<section id="header">
-				<header>
+				<header style="padding: 20px;background-color: rgba(255, 255, 255, 0.7);width:100%">
 					<!--<div style="with:100%; background:'white'; opacity: 0.2;">-->
-					<img src="images/logo.png" style="max-width:800px;" />
-					<p>Referência em Refrigeração e venda de peças.</p>
+					<img src="images/logo.png" style="max-width:800px;"/>
+					<p style="color:black"><b>Referência em Refrigeração e venda de peças.</b></p>
 					<!--</div>-->
 				</header>
 				<footer>
@@ -122,8 +122,11 @@
 
 			<!--TODO: inserir endereço-->
 		<!-- Feature 5 -->
-			<article class="container box style1 right">
-				<a href="#" class="image fit"><div id="map"></div></a>
+			<article class="container box style1 left">
+				<div class="image fit">
+					<!--<div id="map" style="height:605px"></div>-->
+					<div id="map" style="height:100%"></div>
+				</div>
 				<div class="inner">
 					<header>
 						<h2 style="color:#004698">Localização
@@ -195,17 +198,17 @@
 
 <script>
       function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
+        var uluru = {lat: -30.064470, lng: -51.184092};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
+          center: uluru,
+		  zoom: 17
         });
         var marker = new google.maps.Marker({
           position: uluru,
           map: map
         });
       }
-    </script>
-	 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script>
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALJQlKFqxIRFxQHDkvP13Yb5DMiuhjQ14&callback=initMap">
+</script>
