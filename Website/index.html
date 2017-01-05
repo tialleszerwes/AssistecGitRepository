@@ -19,8 +19,15 @@
 			<section id="header">
 				<header style="padding: 20px;background-color: rgba(255, 255, 255, 0.7);width:100%">
 					<!--<div style="with:100%; background:'white'; opacity: 0.2;">-->
-					<img src="images/logo.png" style="max-width:800px;"/>
-					<p style="color:black"><b>Referência em Refrigeração e venda de peças.</b></p>
+					<img src="images/logo.png" style="width:80%; height:80%" />
+					<p>
+						<img src="images/consul.png" style="height:40px; padding-left:2%;"/>
+						<img src="images/brastemp.png" style="height:40px; padding-left:2%;"/>
+						<img src="images/electrolux.png" style="height:40px; padding-left:2%;"/>
+						<img src="images/elgin.png" style="height:40px; padding-left:2%;"/>
+						<img src="images/gelopar.png" style="height:40px; padding-left:2%;"/>
+						<img src="images/lg.png" style="height:40px; padding-left:2%;"/>
+					</p>
 					<!--</div>-->
 				</header>
 				<footer>
@@ -201,7 +208,8 @@
         var uluru = {lat: -30.064470, lng: -51.184092};
         var map = new google.maps.Map(document.getElementById('map'), {
           center: uluru,
-		  zoom: 17
+		  zoom: 17,
+		  scrollwheel: false
         });
         var marker = new google.maps.Marker({
           position: uluru,
