@@ -1467,6 +1467,10 @@ background: url("../../images/backgorundTeste.jpg")  no-repeat center center fix
 	.row > section, .row > article {
 		margin-bottom: 0;
 	}
+	article a img {
+		width: 100%;
+		height:100%;
+	}
 
 /* Image */
 
@@ -1975,7 +1979,8 @@ background: url("../../images/backgorundTeste.jpg")  no-repeat center center fix
 
 		#header footer {
 			position: absolute;
-			bottom: 9em;
+			/*bottom: 9em;*/
+			bottom: 5em;
 			margin: 0;
 			width: 100%;
 		}
@@ -2228,6 +2233,21 @@ background: url("../../images/backgorundTeste.jpg")  no-repeat center center fix
 			.poptrox-popup:hover .closer:hover {
 				opacity: 1.0;
 			}
+	@media screen and (max-width: 3680px) {
+
+		/* Basic */
+
+			body, input, textarea, select {
+				font-size: 16pt;
+			}
+
+				#header header #logo {
+				width: 50%;
+				height:50%;
+			}
+
+	}
+
 
 /* Wide */
 
@@ -2238,7 +2258,6 @@ background: url("../../images/backgorundTeste.jpg")  no-repeat center center fix
 			body, input, textarea, select {
 				font-size: 16pt;
 			}
-
 	}
 
 /* Normal */
@@ -2250,6 +2269,10 @@ background: url("../../images/backgorundTeste.jpg")  no-repeat center center fix
 			#banner {
 				padding: 4em 0 4em 0;
 				background-size: auto, 175% auto;
+			}
+			#header header #logo {
+				width: 80%;
+				height: 80%;
 			}
 
 	}
