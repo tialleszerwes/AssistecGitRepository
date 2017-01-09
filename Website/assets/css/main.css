@@ -48,6 +48,10 @@
 		-webkit-text-size-adjust: none;
 	}
 
+	small {
+		font-size: 18px;
+		font-style: italic;
+	}
 /* Box Model */
 
 	*, *:before, *:after {

@@ -11,6 +11,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="assets/css/main.css" />
+
+		<script src="/assets/js/envioEmail.js">
+
+		</script>
+
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
@@ -144,9 +150,11 @@
 					<b style="color:#004698">CEP</b> <br /> 90.650-003<br />
 					<b style="color:#004698">Contato</b> <br />
 					<b>&nbsp; Assistência Técnica</b> <br />
-					&nbsp; 33365379 - 33843712<br / >
+					<div>&nbsp; 33365379 - 33843712</div>
+					<div><small>&nbsp;&nbsp; assistenciatecnica@assistecpoa.com.br </small> </div>
 					 <b>&nbsp; Venda De Peças</b> <br />
-					&nbsp; 30263512 - 30266840 - 999354200
+					<div>&nbsp; 30263512 - 30266840 - 999354200 </div>
+					 <div><small>&nbsp; comercial@assistecpoa.com.br </small> </div>
 				</div>
 			</article>
 
@@ -159,21 +167,32 @@
 				</header>
 				<form method="post" action="#">
 					<div class="row 50%">
-						<div class="6u 12u$(mobile)"><input type="text" class="text" name="name" placeholder="Nome" /></div>
-						<div class="6u$ 12u$(mobile)"><input type="text" class="text" name="email" placeholder="Email ou Whats :}" /></div>
+						<div class="6u 12u$(mobile)">
+							<input type="text" class="text" name="name" placeholder="Nome" />
+						</div>
+						<div class="6u$ 12u$(mobile) form-group has-warning has-feedback">
+							<input type="text" id="emailtxt" class="text" name="email" onchange="validaEmail()" placeholder="E-mail ou Whats :}" />
+							<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+						</div>
 						<div class="12u$">
 							<textarea name="message" placeholder="Mensagem"></textarea>
 						</div>
-						<div class="12u$">
+						<div id='email' class="6u 12u$(mobile)" onchange='change_email()'>
+						<select>
+							<option value="">Selecione um E-mail de destino</option>
+							<option value="1">assistenciatecnica@assistecpoa.com.br</option>
+							<option value="2">comercial@assistecpoa.com.br</option>
+							<option value="3">reclameaqui@assistecpoa.com.br</option>
+						<select>
+						</div>
+						<div class="6u$ 12u$(mobile)">
 							<ul class="actions">
-								<li><input type="submit" value="Enviar Mensagem" /></li>
+								<li><input id='enviarMsg' type="submit" disabled value="Enviar Mensagem" /></li>
 							</ul>
 						</div>
 					</div>
 				</form>
-			</article>
-
-		
+			</article>		
 
 		<section id="footer">
 			<ul class="icons">
@@ -204,6 +223,19 @@
 </html>
 
 <script>
+	
+	function change_email()
+	{
+		debugger;
+		if(document.getElementById('email').value == "")
+		{
+			document.getElementById('enviarMsg').disabled = true;
+		}	
+		else{
+			document.getElementById('enviarMsg').disabled = false;
+		}
+	}
+
       function initMap() {
         var uluru = {lat: -30.064470, lng: -51.184092};
         var map = new google.maps.Map(document.getElementById('map'), {
