@@ -12,6 +12,7 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link href="assets/css/main.css" />
+		<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">s-->
 
 		<script src="/assets/js/envioEmail.js">
 
@@ -167,18 +168,18 @@
 				</header>
 				<form method="post" action="#">
 					<div class="row 50%">
-						<div class="6u 12u$(mobile)">
-							<input type="text" class="text" name="name" placeholder="Nome" />
+						<div class="6u 12u$(mobile)" id="nomeDiv">
+							<input id='nomeTxt' type="text" class="text" name="name" placeholder="Nome" onchange="nomeChangeWithError()" />
 						</div>
-						<div class="6u$ 12u$(mobile) form-group has-warning has-feedback">
-							<input type="text" id="emailtxt" class="text" name="email" onchange="validaEmail()" placeholder="E-mail ou Whats :}" />
+						<div class="6u$ 12u$(mobile) form-group has-warning has-feedback" id="emailClienteDiv">
+							<input type="text" id="emailtxt" class="text" name="email" placeholder="E-mail ou Whats :}" onchange="emailClienteChangeWithError()" />
 							<span class="glyphicon glyphicon-remove form-control-feedback"></span>
 						</div>
-						<div class="12u$">
-							<textarea name="message" placeholder="Mensagem"></textarea>
+						<div class="12u$" id="mensagemDiv">
+							<textarea id='mensagemTxt' name="message" placeholder="Mensagem" onchange="mensagemClienteChangeWithError()"></textarea>
 						</div>
-						<div id='email' class="6u 12u$(mobile)" onchange='change_email()'>
-						<select>
+						<div id='emailDiv' class="6u 12u$(mobile)">
+						<select id='emailSelect' onchange="emailChangeWithError()">
 							<option value="">Selecione um E-mail de destino</option>
 							<option value="1">assistenciatecnica@assistecpoa.com.br</option>
 							<option value="2">comercial@assistecpoa.com.br</option>
@@ -187,7 +188,7 @@
 						</div>
 						<div class="6u$ 12u$(mobile)">
 							<ul class="actions">
-								<li><input id='enviarMsg' type="submit" disabled value="Enviar Mensagem" /></li>
+								<li><input id='enviarMsg' type="button" onclick="enviaForm()" value="Enviar Mensagem" /></li>
 							</ul>
 						</div>
 					</div>
@@ -223,18 +224,7 @@
 </html>
 
 <script>
-	
-	function change_email()
-	{
-		debugger;
-		if(document.getElementById('email').value == "")
-		{
-			document.getElementById('enviarMsg').disabled = true;
-		}	
-		else{
-			document.getElementById('enviarMsg').disabled = false;
-		}
-	}
+
 
       function initMap() {
         var uluru = {lat: -30.064470, lng: -51.184092};
