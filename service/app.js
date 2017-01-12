@@ -11,56 +11,13 @@ var email = require('./routes/email');
 
 var app = express();
 
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-// app.use(logger('dev'));
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
-
+//diretório de chamada ex: api/email/enviarEmail
 app.use('/', index);
-app.use('/email', email);
+app.use('/api/email', email);
 
 app.listen(5000);
 
-// app.get('/',defaultRoute);
-
-
-
-// app.get('/enviarEmail', enviarEmail);
-
-
-// function enviarEmail(req, res) {
-//   var transporte = nodeMailer.createTransport(
-//     {
-//       service: 'Gmail',
-//       auth:
-//       {
-//         user: 'tialleszerwes@gmail.com',
-//         pass: 'tz150194'
-//       }
-//     });
-
-//   var email = {
-//     from: 'tialleszerwes@gmail.com',
-//     to: 'tialles_zerwes@hotmail.com',
-//     subject: 'Envio de formulario de e-mail teste',
-//     html: 'Boa tarde, Estou enviando esse teste de e-mail de uma maneira automática. Teste de uma api Node.js.'
-//   }
-
-//   transporte.sendMail(email, function (err, info) {
-//     if (err) {
-//       throw err;
-//     }
-
-//     console.log('Email enviado! Leia as informações adicionais: ', info);
-//   });
-// }
+module.exports = app;
 
 // // catch 404 and forward to error handler
 // app.use(function (req, res, next) {
@@ -80,4 +37,14 @@ app.listen(5000);
 //   res.render('error');
 // });
 
-module.exports = app;
+// view engine setup
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'jade');
+
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// app.use(logger('dev'));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(cookieParser());
+// app.use(express.static(path.join(__dirname, 'public')));

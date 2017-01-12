@@ -4,14 +4,14 @@ var emailService = {};
 
 // module.exports = 
 
-emailService.enviarEmail = function() {
+emailService.enviar = function(dadoEnvioParam) {
   var transporte = nodeMailer.createTransport(
     {
       service: 'Gmail',
       auth:
       {
         user: 'tialleszerwes@gmail.com',
-        pass: 'tz150194'
+        pass: '34464811'
       }
     });
 
