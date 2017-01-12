@@ -112,13 +112,13 @@ function enviarEmail() {
     var selectEmail = document.getElementById("emailSelect");
 
     var dadosEnvio = {
-        nomeCliente: document.getElementById("nomeTxt"),
-        contato: document.getElementById("emailtxt"),
-        mensagem: document.getElementById("mensagemTxt"),
-        emailDestino: selectEmail.options[selectEmail.selectedIndex].textk
+        nomeCliente: document.getElementById("nomeTxt").value,
+        contato: document.getElementById("emailtxt").value,
+        mensagem: document.getElementById("mensagemTxt").value,
+        emailDestino: selectEmail.options[selectEmail.selectedIndex].text
     }
     debugger;
-    $.post("127.0.0.1:5000/api/email/enviar", dadosEnvio, function (data) {
+    $.post("http://127.0.0.1:5000/api/email/enviar", dadosEnvio, function (data) {
         debugger;
     }, 'json').error(function (errorResponse) {
         debugger;
