@@ -4,7 +4,7 @@ var emailService = {};
 
 // module.exports = 
 
-emailService.enviar = function(dadoEnvioParam) {
+emailService.enviar = function(dadosEnvioParam) {
   var transporte = nodeMailer.createTransport(
     {
       service: 'Gmail',
@@ -16,17 +16,18 @@ emailService.enviar = function(dadoEnvioParam) {
     });
 
   var email = {
-    from: 'tialleszerwes@gmail.com',
-    to: 'tialles_zerwes@hotmail.com',
-    subject: 'Envio de formulario de e-mail teste',
-    html: 'Boa tarde, Estou enviando esse teste de e-mail de uma maneira automática. Teste de uma api Node.js.'
-  }
+    from: dadosEnvioParam.nomeCliente,
+    to: dadosEnvioParam.emailDestino,
+    subject: 'E-mail Site',
+    html: dadosEnvioParam.mensagem
+  };
 
   transporte.sendMail(email, function (err, info) {
     if (err) {
       throw err;
+      //TODO: inserir retorno de erro;
     }
-
+    //TODO: inserir retorno de sucesso
     console.log('Email enviado! Leia as informações adicionais: ', info);
   });
 }

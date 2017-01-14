@@ -4,12 +4,16 @@ var express = require('express');
 // var logger = require('morgan');
 // var cookieParser = require('cookie-parser');
 // var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 var nodeMailer = require('nodemailer');
 
 var index = require('./routes/index');
 var email = require('./routes/email');
 
 var app = express();
+
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 //diretório de chamada ex: api/email/enviarEmail
 app.use('/', index);
