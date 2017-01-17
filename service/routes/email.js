@@ -1,6 +1,6 @@
 // var path = require('path');
 var express = require('express');
-var emailNG = require('./../public/emailNG');
+var emailNG = require('./../public/javascripts/emailNG');
 var router = express.Router();
 
 // var app = express();
@@ -11,8 +11,7 @@ router.post('/enviar', function(req, res, next)
 {  
   var objParam = req.body;  
 
-  emailNG.enviar(objParam);
-  res.end("Execução finalizada!!" + objParam.assunto)
+  emailNG.enviar(objParam, res);
 });
 
 
