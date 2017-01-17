@@ -27,12 +27,16 @@ emailService.enviar = function (dadosEnvioParam, response) {
       // err.message;
       //TODO: inserir retorno de erro;
       // response.end(returnMsg.createMsg({ status: '500', mensagem: err.message }));
-      response.json({ status: '500', mensagem: err.message });
+      // response.status(500).send(err.message).end();
+      response.status(500);
+      response.json({ message: err.message });
+      return;
     }
     //TODO: inserir retorno de sucesso
     // response.end(returnMsg.createMsg({ status: '200', mensagem: 'E-mail enviado com sucesso.' }));
-    response.json({ status: '200', mensagem: 'E-mail enviado com sucesso.'});
+    response.send("E-mail enviado com sucesso");
     console.log('Email enviado! Leia as informações adicionais: ', info);
+    return;
   });
 }
 

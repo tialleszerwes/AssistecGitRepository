@@ -120,7 +120,7 @@ function enviarEmail() {
     debugger;
     $.post("http://127.0.0.1:5000/api/email/enviar", dadosEnvio, function (data) {
         debugger;
-    }, 'json').error(function (errorResponse) {
+    }, 'json').error(function (param1,param2,param3) {
         debugger;
     });
 }
