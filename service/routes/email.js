@@ -9,6 +9,7 @@ var router = express.Router();
 /* GET users listing. */
 router.post('/enviar', function(req, res, next) 
 {  
+  res.header("Access-Control-Allow-Origin", "*");
   var objParam = req.body;  
 
   emailNG.enviar(objParam, res);

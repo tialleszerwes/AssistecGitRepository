@@ -1,5 +1,4 @@
 function enviaForm() {
-    debugger;
     if (validaForm()) {
         enviarEmail();
     }
@@ -21,6 +20,9 @@ function validaForm() {
         document.getElementById("nomeDiv").innerHTML += "<small> <font id='errorNome' color='red'>Nome inválido </font> </small>";
         indValid = false;
     }
+    else{
+        indValid = false;
+    }
 
     //valida email de envio
     if (document.getElementById("emailSelect").value != "") {
@@ -33,6 +35,9 @@ function validaForm() {
         document.getElementById("emailDiv").innerHTML += "<small> <font id='errorEmail' color='red'>E-mail inválido </font> </smal>";
         indValid = false;
     }
+    else{
+        indValid = false;
+    }
 
     //valida mensagem
     if (document.getElementById("mensagemTxt").value >= 10) {
@@ -43,6 +48,9 @@ function validaForm() {
     }
     else if (document.getElementById("errorMensagem") == null) {
         document.getElementById("mensagemDiv").innerHTML += "<small> <font id='errorMensagem' color='red'>Mensagem inválida </font> </small>";
+        indValid = false;
+    }
+    else{
         indValid = false;
     }
 
@@ -104,6 +112,9 @@ function validaEmail() {
         document.getElementById("emailClienteDiv").innerHTML += "<small> <font id='errorEmailCliente' color='red'>E-mail inválido </font> </small>";
         return false;
     }
+    else{
+        return false;
+    }
 
     return true;
 }
@@ -117,10 +128,9 @@ function enviarEmail() {
         mensagem: document.getElementById("mensagemTxt").value,
         emailDestino: selectEmail.options[selectEmail.selectedIndex].text
     }
-    debugger;
     $.post("http://127.0.0.1:5000/api/email/enviar", dadosEnvio, function (data) {
-        debugger;
-    }, 'json').error(function (param1,param2,param3) {
-        debugger;
+        alert(data.message);
+    }, 'json').fail(function (error) {
+        alert(error.responseText);
     });
 }

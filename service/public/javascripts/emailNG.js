@@ -18,23 +18,17 @@ emailService.enviar = function (dadosEnvioParam, response) {
   var email = {
     from: dadosEnvioParam.nomeCliente,
     to: dadosEnvioParam.emailDestino,
-    subject: 'E-mail Site',
+    subject: dadosEnvioParam.nomeCliente + " - " + dadosEnvioParam.contato,
     html: dadosEnvioParam.mensagem
   };
 
   transporte.sendMail(email, function (err, info) {
     if (err) {
-      // err.message;
-      //TODO: inserir retorno de erro;
-      // response.end(returnMsg.createMsg({ status: '500', mensagem: err.message }));
-      // response.status(500).send(err.message).end();
       response.status(500);
-      response.json({ message: err.message });
+      response.send("Houve um erro ao enviar o E-mail. Reinicie o sistema e tente novamente.").end();
       return;
     }
-    //TODO: inserir retorno de sucesso
-    // response.end(returnMsg.createMsg({ status: '200', mensagem: 'E-mail enviado com sucesso.' }));
-    response.send("E-mail enviado com sucesso");
+    response.json({ message: "E-mail enviado com sucesso" }).end();
     console.log('Email enviado! Leia as informações adicionais: ', info);
     return;
   });

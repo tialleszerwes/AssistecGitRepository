@@ -166,19 +166,21 @@
 					<h2>Nos mande uma mensagem</h2>
 					<p>possui alguma dúvida? deseja marcar um orçamento?</p>
 				</header>
-				<form method="post" action="#">
+				<form method="post" action="#" onSubmit="return enviaForm()">
 					<div class="row 50%">
-						<div class="6u 12u$(mobile)" id="nomeDiv">
-							<input id='nomeTxt' type="text" class="text" name="name" placeholder="Nome" onchange="nomeChangeWithError()" />
+						<div class="6u 12u$(mobile)">
+							<input id='nomeTxt' type="text" class="text" name="name" placeholder="Nome" onkeypress="nomeChangeWithError()" />
+							<div id="nomeDiv"></div>
 						</div>
-						<div class="6u$ 12u$(mobile) form-group has-warning has-feedback" id="emailClienteDiv">
+						<div class="6u$ 12u$(mobile) form-group has-warning has-feedback">
 							<input type="text" id="emailtxt" class="text" name="email" placeholder="E-mail ou Whats :}" onchange="emailClienteChangeWithError()" />
-							<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+							<div id="emailClienteDiv"></div>
 						</div>
-						<div class="12u$" id="mensagemDiv">
-							<textarea id='mensagemTxt' name="message" placeholder="Mensagem" onchange="mensagemClienteChangeWithError()"></textarea>
+						<div class="12u$" >
+							<textarea id='mensagemTxt' name="message" placeholder="Mensagem" onkeypress="mensagemClienteChangeWithError()"></textarea>
+							<div id="mensagemDiv"></div>
 						</div>
-						<div id='emailDiv' class="6u 12u$(mobile)">
+						<div class="6u 12u$(mobile)">
 						<select id='emailSelect' onchange="emailChangeWithError()">
 							<option value="">Selecione um E-mail de destino</option>
 							<option value="0">tialles_zerwes@hotmail.com</option>
@@ -186,11 +188,12 @@
 							<option value="2">comercial@assistecpoa.com.br</option>
 							<option value="3">reclameaqui@assistecpoa.com.br</option>
 						<select>
+							<div id='emailDiv'></div>
 						</div>
 						
 						<div class="6u$ 12u$(mobile)">
 							<ul class="actions">
-								<li><input id='enviarMsg' type="button" onclick="enviaForm()" value="Enviar Mensagem" /></li>
+								<li><input id='enviarMsg' type="button" oncsubmit="enviaForm()" onclick="enviaForm()" value="Enviar Mensagem" /></li>
 							</ul>
 						</div>
 					</div>
