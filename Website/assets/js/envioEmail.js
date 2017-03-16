@@ -46,7 +46,8 @@ function validaForm() {
             errorTag.remove();
         }
     }
-    else if (document.getElementById("errorMensagem") == null) {
+    else if (document.getElementById("mensagemTxt").value < 10) {
+    //else if (document.getElementById("errorMensagem") == null) {
         document.getElementById("mensagemDiv").innerHTML += "<small> <font id='errorMensagem' color='red'>Mensagem inválida </font> </small>";
         indValid = false;
     }
@@ -55,7 +56,7 @@ function validaForm() {
     }
 
     //valida email cliente
-    indValid = validaEmail();
+    indValid = validaEmailPhone();
 
     return indValid;
 }
@@ -85,11 +86,21 @@ function mensagemClienteChangeWithError() {
 }
 
 function emailClienteChangeWithError() {
-    validaEmail();
+    validaEmailPhone();
 }
 
-function validaEmail() {
+function validaEmailPhone() {
     var emailtxt = document.getElementById("emailtxt").value;
+
+    if(emailtxt*1 > 0){
+        if(emailtxt.length <= 8){
+        $('#errorEmailCliente').remove();
+        document.getElementById("emailClienteDiv").innerHTML += "<small> <font id='errorEmailCliente' color='red'>Número inválido </font> </small>";
+        return false;    
+        }
+        $('#errorEmailCliente').remove();
+        return true;
+    }
 
     usuario = emailtxt.substring(0, emailtxt.indexOf("@"));
     dominio = emailtxt.substring(emailtxt.indexOf("@") + 1, emailtxt.length);
@@ -109,6 +120,7 @@ function validaEmail() {
         }
     }
     else if (document.getElementById("errorEmailCliente") == null) {
+        $('#errorEmailCliente').remove();
         document.getElementById("emailClienteDiv").innerHTML += "<small> <font id='errorEmailCliente' color='red'>E-mail inválido </font> </small>";
         return false;
     }
@@ -129,8 +141,10 @@ function enviarEmail() {
         emailDestino: selectEmail.options[selectEmail.selectedIndex].text
     }
     $.post("http://127.0.0.1:5000/api/email/enviar", dadosEnvio, function (data) {
+        debugger;
         alert(data.message);
     }, 'json').fail(function (error) {
+        debugger;
         alert(error.responseText);
     });
 }

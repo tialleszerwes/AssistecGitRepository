@@ -10,8 +10,8 @@ emailService.enviar = function (dadosEnvioParam, response) {
       service: 'Gmail',
       auth:
       {
-        user: 'tialleszerwes@gmail.com',
-        pass: '34464811'
+        user: 'envioemailaplicacao@gmail.com',
+        pass: 'envioemailaplicacao123'
       }
     });
 
