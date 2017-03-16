@@ -1314,7 +1314,6 @@
 /* Basic */
 
 html{
-/*background: url("../../images/backgorundTeste.jpg")  no-repeat center center fixed;*/
 background: url("../../images/background.jpg")  no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -2290,13 +2289,6 @@ background: url("../../images/background.jpg")  no-repeat center center fixed;
 
 			body {
 				font-size: 14pt;
-				/*background-color: #203936;
-				background-image: url("images/overlay.png"), url("../../images/bg-alt.jpg");
-				background-repeat: repeat, no-repeat;
-				background-size: auto, 100% auto;
-				background-position: top left, top center;
-				background-attachment: scroll, scroll;
-				font-size: 14pt;*/
 			}
 
 			p img{

@@ -140,7 +140,8 @@ function enviarEmail() {
         mensagem: document.getElementById("mensagemTxt").value,
         emailDestino: selectEmail.options[selectEmail.selectedIndex].text
     }
-    $.post("http://127.0.0.1:5000/api/email/enviar", dadosEnvio, function (data) {
+    // http://127.0.0.1:5000 debug
+    $.post("/api/api/email/enviar", dadosEnvio, function (data) {
         debugger;
         alert(data.message);
     }, 'json').fail(function (error) {
