@@ -47,7 +47,6 @@ function validaForm() {
         }
     }
     else if (document.getElementById("mensagemTxt").value < 10) {
-    //else if (document.getElementById("errorMensagem") == null) {
         document.getElementById("mensagemDiv").innerHTML += "<small> <font id='errorMensagem' color='red'>Mensagem inválida </font> </small>";
         indValid = false;
     }
@@ -142,10 +141,8 @@ function enviarEmail() {
     }
     // http://127.0.0.1:5000 debug
     $.post("/api/api/email/enviar", dadosEnvio, function (data) {
-        debugger;
         alert(data.message);
     }, 'json').fail(function (error) {
-        debugger;
         alert(error.responseText);
     });
 }
