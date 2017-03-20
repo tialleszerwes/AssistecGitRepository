@@ -16,8 +16,8 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 //diretório de chamada ex: api/email/enviarEmail
-app.use('/', index);
-app.use('/api/email', email);
+// app.use('/', index);
+app.use('/', email);
 
 // app.listen(5000);
 

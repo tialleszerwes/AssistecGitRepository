@@ -19,7 +19,7 @@ emailService.enviar = function (dadosEnvioParam, response) {
     from: dadosEnvioParam.nomeCliente,
     to: dadosEnvioParam.emailDestino,
     subject: dadosEnvioParam.nomeCliente + " - " + dadosEnvioParam.contato,
-    html: dadosEnvioParam.mensagem
+    html: dadosEnvioParam.mensagem + "\n \n" + dadosEnvioParam.nomeCliente + " - " + dadosEnvioParam.contato
   };
 
   transporte.sendMail(email, function (err, info) {
