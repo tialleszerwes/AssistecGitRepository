@@ -91,6 +91,19 @@
 
 	@media screen and (max-width: 1680px) {
 
+
+		/* Image */
+
+		section header img.icon-maior {
+			padding-left: 2%;
+			height: 30px;
+		}
+
+		section header img.icon-menor {
+			padding-left: 2%;
+			height: 25px;
+		}
+
 		.container.\31 25\25 {
 			width: 100%;
 			max-width: 1200px;
@@ -116,6 +129,19 @@
 	}
 
 	@media screen and (max-width: 1080px) {
+
+   		/* Image */
+
+		section header img.icon-maior {
+			padding-left: 2%;
+			height: 30px;
+		}
+
+		section header img.icon-menor {
+			padding-left: 2%;
+			height: 25px;
+		}
+
 
 		.container.\31 25\25 {
 			width: 100%;
@@ -143,6 +169,18 @@
 
 	@media screen and (max-width: 840px) {
 
+		/* Image */
+
+		section header img.icon-maior {
+			padding-left: 2%;
+			height: 30px;
+		}
+
+		section header img.icon-menor {
+			padding-left: 2%;
+			height: 25px;
+		}
+
 		.container.\31 25\25 {
 			width: 100%;
 			max-width: 118.75%;
@@ -168,6 +206,7 @@
 	}
 
 	@media screen and (max-width: 736px) {
+
 
 		.container.\31 25\25 {
 			width: 100%;
@@ -2369,7 +2408,7 @@ background: url("../../images/backgorundTeste.jpg")  no-repeat center center fix
 
 		/* Basic */
 
-			* {
+			* {	
 				text-shadow: none !important;
 			}
 
@@ -2387,6 +2426,24 @@ background: url("../../images/backgorundTeste.jpg")  no-repeat center center fix
 				font-size: 1.25em;
 				letter-spacing: 4px;
 			}
+
+		/* Image */
+
+			#header header #logo {
+				width: 100%;
+				height: 100%;
+			}
+
+			section header img.icon-maior {
+				padding-left: 2%;
+				height: 16px;
+			}
+
+			section header img.icon-menor {
+				padding-left: 2%;
+				height: 13px;
+			}
+			
 
 		/* List */
 
